@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ujjain & Omkareshwar 2-Day Spiritual Pilgrimage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --saffron: #FF9933;
+            --white: #FFFFFF;
+            --gold: #D4AF37;
+            --dark-brown: #3D2817;
+            --temple-red: #B22234;
+            --cream: #FFF8DC;
+            --light-gold: #F5E6D3;
+            --spiritual-purple: #4A235A;
+            --river-blue: #1E90FF;
+            --text-dark: #2C1810;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Georgia', 'Garamond', serif;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--light-gold) 100%);
+            color: var(--text-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--saffron) 0%, var(--temple-red) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 2rem;
+            border-bottom: 5px solid var(--gold);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '🕉️';
+            position: absolute;
+            font-size: 150px;
+            opacity: 0.1;
+            top: -30px;
+            right: -30px;
+            transform: rotate(-15deg);
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 2px;
+        }
+
+        .header p {
+            font-size: 1.3em;
+            font-style: italic;
+            opacity: 0.95;
+        }
+
+        .header-subtext {
+            font-size: 0.9em;
+            margin-top: 1rem;
+            letter-spacing: 3px;
+            font-weight: 300;
+        }
+
+        /* Navigation */
+        .nav-container {
+            background: var(--dark-brown);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+        }
+
+        .nav button {
+            background: none;
+            border: none;
+            color: var(--white);
+            cursor: pointer;
+            font-size: 1em;
+            padding: 0.5rem 1rem;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav button:hover,
+        .nav button.active {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Day Section */
+        .day-section {
+            background: var(--white);
+            margin: 2rem 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            border-left: 8px solid var(--saffron);
+            display: none;
+        }
+
+        .day-section.active {
+            display: block;
+            animation: slideIn 0.4s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .day-header {
+            background: linear-gradient(135deg, var(--saffron) 0%, #FF6B35 100%);
+            color: var(--white);
+            padding: 2rem;
+            border-bottom: 3px dashed var(--gold);
+        }
+
+        .day-header h2 {
+            font-size: 2.2em;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .day-header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        /* Timeline */
+        .timeline {
+            padding: 2rem 0;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--saffron), var(--temple-red), var(--river-blue));
+            border-radius: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+        }
+
+        .timeline-item {
+            margin-bottom: 2.5rem;
+            padding: 0 2rem;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item {
+                padding-left: 80px;
+                padding-right: 1rem;
+            }
+        }
+
+        .timeline-item:nth-child(odd) {
+            text-align: right;
+            padding-right: calc(50% + 2rem);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item:nth-child(odd) {
+                text-align: left;
+                padding-right: 1rem;
+            }
+        }
+
+        .timeline-item:nth-child(even) {
+            padding-left: calc(50% + 2rem);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item:nth-child(even) {
+                padding-left: 80px;
+            }
+        }
+
+        /* Timeline Dot */
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--gold);
+            border: 4px solid var(--white);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--saffron), 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-dot {
+                left: 30px;
+            }
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot::after,
+        .timeline-item:nth-child(odd) .timeline-dot::after {
+            content: '';
+        }
+
+        /* Timeline Card */
+        .timeline-card {
+            background: linear-gradient(135deg, var(--light-gold) 0%, var(--cream) 100%);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid var(--river-blue);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-card {
+            border-left: none;
+            border-right: 5px solid var(--river-blue);
+        }
+
+        .time-slot {
+            color: var(--saffron);
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .duration {
+            background: var(--saffron);
+            color: var(--white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-left: auto;
+        }
+
+        .timeline-item:nth-child(odd) .duration {
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .activity-title {
+            font-size: 1.3em;
+            color: var(--dark-brown);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .activity-icon {
+            font-size: 1.5em;
+        }
+
+        .activity-details {
+            margin: 1rem 0;
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        .detail-item {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .detail-item::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+
+        .cost {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--saffron);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            margin-top: 0.75rem;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        /* Summary Box */
+        .summary-box {
+            background: linear-gradient(135deg, var(--spiritual-purple) 0%, #6A3D7A 100%);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .summary-box h3 {
+            font-size: 1.3em;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.5rem;
+        }
+
+        .summary-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .summary-box li {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .summary-box li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        /* Budget Section */
+        .budget-section {
+            background: var(--white);
+            margin: 2rem 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            border-left: 8px solid var(--temple-red);
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, var(--temple-red) 0%, #8B1538 100%);
+            color: var(--white);
+            padding: 2rem;
+            border-bottom: 3px dashed var(--gold);
+        }
+
+        .section-header h2 {
+            font-size: 2em;
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .budget-items {
+            padding: 2rem;
+        }
+
+        .budget-category {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .budget-category:last-child {
+            border-bottom: none;
+        }
+
+        .category-title {
+            font-size: 1.2em;
+            color: var(--dark-brown);
+            font-weight: bold;
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--saffron);
+        }
+
+        .budget-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.5rem 0;
+            padding: 0.5rem 1rem;
+            background: var(--light-gold);
+            border-radius: 5px;
+        }
+
+        .budget-total {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: var(--saffron);
+            background: linear-gradient(135deg, rgba(255, 153, 51, 0.1), rgba(212, 175, 55, 0.1));
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        /* Tips Section */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .tip-card {
+            background: linear-gradient(135deg, var(--light-gold) 0%, var(--cream) 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-top: 4px solid var(--saffron);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tip-card h4 {
+            color: var(--saffron);
+            margin-bottom: 1rem;
+            font-size: 1.1em;
+        }
+
+        .tip-card p {
+            font-size: 0.95em;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-brown);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 5px solid var(--gold);
+        }
+
+        .footer h3 {
+            font-size: 1.5em;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+
+        .footer p {
+            font-size: 0.95em;
+            margin: 0.5rem 0;
+        }
+
+        .mantra {
+            font-size: 1.3em;
+            font-style: italic;
+            margin-top: 1.5rem;
+            color: var(--gold);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .nav {
+                gap: 0.5rem;
+            }
+
+            .nav button {
+                font-size: 0.85em;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .timeline-item {
+                padding-left: 80px !important;
+                padding-right: 1rem !important;
+                text-align: left !important;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-dot {
+                left: 30px;
+            }
+
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+
+        .mt-2 {
+            margin-top: 2rem;
+        }
+
+        .highlight {
+            color: var(--saffron);
+            font-weight: bold;
+        }
+
+        .spiritual-text {
+            font-style: italic;
+            color: var(--spiritual-purple);
+        }
+
+        /* Loading Animation */
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .icon-pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>🕉️ UJJAIN & OMKARESHWAR 🕉️</h1>
+        <p>2-Day Spiritual Pilgrimage Journey</p>
+        <div class="header-subtext">Blessed Path to the Divine Jyotirlingas</div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-container">
+        <div class="nav">
+            <button class="nav-btn active" onclick="showDay('day1')">📅 Day 1: Ujjain</button>
+            <button class="nav-btn" onclick="showDay('day2')">📅 Day 2: Omkareshwar</button>
+            <button class="nav-btn" onclick="showDay('budget')">💰 Budget & Tips</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- DAY 1 -->
+        <div id="day1" class="day-section active">
+            <div class="day-header">
+                <h2>📍 DAY 1: UJJAIN EXPLORATION</h2>
+                <p>12:00 PM - 10:00 PM | Mahakaleshwar Temple & Sacred Aarties</p>
+            </div>
+
+            <div class="timeline">
+                <!-- Activity 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">🚌</div>
+                    <div class="timeline-card">
+                        <div class="time-slot">
+                            12:00 PM - 12:30 PM
+                            <span class="duration">30 min</span>
+                        </div>
+                        <div class="activity-title">
+                            <span class="activity-icon">🚌</span> Bus Arrival & Transfer
+                        </div>
+                        <div class="activity-details">
+                            <div class="detail-item">Ujjain Bus Stand</div>
+                            <div class="detail-item">Book local auto/cab: ₹200-300</div>
+                            <div class="detail-item">Check luggage safely</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">🏨</div>
+                    <div class="timeline-card">
+                        <div class="time-slot">
+                            12:30 PM - 2:00 PM
+                            <span class="duration">90 min</span>
+                        </div>
+                        <div class="activity-title">
+                            <span class="activity-icon">🏨</span> Hotel Check-in & Lunch
+                        </div>
+                        <div class="activity-details">
+                            <div class="detail-item"><strong>Budget Options:</strong> Shubham Guest House, Dream Castle (₹800)</div>
+                            <div class="detail-item"><strong>Lunch:</strong> Poha-Jalebi at Tower Chowk (₹40)</div>
+                            <div class="detail-item">Rest 30 mins before temple visit</div>
+                        </div>
+                        <div class="cost">💰 ~₹900-1000</div>
+                    </div>
+                </div>
+
+                <!-- Activity 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">🙏</div>
+                    <div class="timeline-card">
+                        <div class="time-slot">
+                            2:00 PM - 4:00 PM
+                            <span class="duration">120 min</span>
+                        </div>
+                        <div class="activity-title">
+                            <span class="activity-icon">🙏</span> Mahakaleshwar Jyotirlinga Darshan
+                        </div>
+                        <div class="activity-details">
+                            <div class="detail-item"><strong>Sacred:</strong> One of 12 Jyotirlingas - Most Sacred</div>
+                            <div class="detail-item"><strong>Entry Fee:</strong> Free | Open 4 AM - 11 PM</div>
+                            <div class="detail-item"><strong>Distance:</strong> 2 km from station (Auto: ₹100)</div>
+                            <div class="detail-item">Darshan Queue: 30-45 mins | VIP: ₹500 optional</div>
+                        </div>
+                        <div class="cost">💰 Free Entry</div>
+                    </div>
+                </div>
+
+                <!-- Activity 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">🍽️</div>
+                    <div class="timeline-card">
+                        <div class="time-slot">
+                            4:00 PM - 6:00 PM
+                            <span class="duration">120 min</span>
+                        </div>
+                        <div class="activity-title">
+                            <span class="activity-icon">🍽️</span> Rest & Street Food Experience
+                        </div>
+                        <div class="activity-details">
+                            <div class="detail-item"><strong>Tower Chowk:</strong> Hot Poha (₹40), Kachoris (₹20)</div>
+                            <div class="detail-item"><strong>Gopal Mandir:</strong> Malpua & Gulab Jamun (₹50)</div>
+                            <div class="detail-item"><strong>Freeganj:</strong> Pav Bhaji (₹60), Chaats</div>
+                            <div class="detail-item">Eat early 4:30 PM to avoid crowds</div>
+                        </div>
+                        <div class="cost">💰 ₹200-300</div>
+                    </div>
+                </div>
+
+                <!-- Activity 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">⚫</div>
+                    <div class="timeline-card">
+                        <div class="time-slot">
+                            6:00 PM - 6:45 PM
+                            <span class="duration">45 min</span>
+                        </div>
+                        <div class="activity-title">
+                            <span class="activity-icon">⚫</span> Kaal Bhairav Temple Darshan
+                        </div>
+                        <div class="activity-details">
+                            <div class="detail-item"><strong>Sacred:</strong> Protector Deity of Ujjain</div>
+                            <div class="detail-item"><strong>Evening Aarti:</strong> 6:00-7:00 PM (Don't Miss!)</div>
+                            <div class="detail-item"><strong>Unique:</strong> Devotees offer alcohol as prasad</div>
+                            <div class="detail-item">Distance from Mahakaleshwar: 1.5 km (Auto: ₹50)</div>
+                        </div>
+                        <div class="cost">💰 Free Entry</div>
+                    </div>
+                </div>
+
+                <!-- Activity 6 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">🔥</div>
+                    <div class="timeline-card">
+                        <div class="time-slot">
+                            6:45 PM - 8:00 PM
+                            <span class="duration">75 min</span>
+                        </div>
+                        <div class="activity-title">
+                            <span class="activity-icon">🔥</span> Ram Ghat Shipra River Evening Aarti ⭐
+                        </div>
+                        <div class="activity-details">
+                            <div class="detail-item"><strong class="highlight">MUST-SEE MOMENT!</strong> Most photogenic & spiritual</div>
+                            <div class="detail-item"><strong>Aarti Time:</strong> 7:00 PM Sharp | Arrive 6:45 PM</div>
+                            <div class="detail-item"><strong>Experience:</strong> 100+ Diyas, Chanting, River Glow</div>
+                            <div class="detail-item">Considered India's most spiritual experience</div>
+                            <div class="detail-item">Distance: 2 km | Boat Rides: ₹50-100</div>
+                        </div>
+                        <div class="cost">💰 Free Entry | Unforgettable Experience</div>
+                    </div>
+                </div>
+
+                <!-- Activity 7 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">🌙</div>
+                    <div class="timeline-card">
+                        <div class="time-slot">
+                            8:00 PM - 10:00 PM
+                            <span class="duration">120 min</span>
+                        </div>
+                        <div class="activity-title">
+                            <span class="activity-icon">🌙</span> Dinner & Rest
+                        </div>
+                        <div class="activity-details">
+                            <div class="detail-item"><strong>Satvik Bhojan:</strong> Vegetarian (₹100)</div>
+                            <div class="detail-item"><strong>Sai Daal Bafle:</strong> Thali (₹180)</div>
+                            <div class="detail-item"><strong>Best Area:</strong> Freeganj (Multiple Options)</div>
+                            <div class="detail-item">Return to hotel: ₹100-150</div>
+                            <div class="detail-item"><strong style="color: var(--temple-red);">Sleep 7 hours minimum for Day 2!</strong></div>
+                        </div>
+                        <div class="cost">💰 ₹200-300</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="summary-box">
+                <h3>📋 Day 1 Summary</h3>
+                <ul>
+                    <li>Visit 3 Sacred Temples: Mahakaleshwar, Kaal Bhairav, Ram Ghat</li>
+                    <li>Experience 2 Evening Aarties with divine atmosphere</li>
+                    <li>Taste authentic Ujjain street food</li>
+                    <li>Capture sunset at the most photogenic spiritual site in India</li>
+                    <li>Prepare mind & body for early morning sacred ritual on Day 2</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- DAY 2 -->
+        <div id="day2" class="day-section">
+            <div class="day-header">
+                <h2>📍 DAY 2: BHASMA AARTI & OMKARESHWAR PILGRIMAGE</h2>
+                <p>3:30 AM - 10:00 PM | Most Sacred Ritual & 2nd Jyotirlinga</p>
+            </div>
+
+            <div class="timeline">
+                <!-- Activity 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">⏰</div>
+                    <div class="timeline-card">
+                        <div class="time-slot">
+                            3:30 AM - 4:00 AM
+                            <span class="duration">30 min</span>
+                        </div>
+                        <div class="activity-title">
+                            <span class="activity-icon">⏰</span> Wake Up & Preparation
+                        </div>
+                        <div class="activity-details">
+                            <div class="detail-item">Set alarm for 3:15 AM backup</div>
+                            <div class="detail-item">Quick wash-up, wear clean clothes</div>
+                            <div class="detail-item">Light snack: Banana or Biscuit</div>
+                            <div class="detail-item">Pre-book auto/cab: ₹300-500</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">✨</div>
+                    <div class="timeline-card">
+                        <div class="time-slot">
+                            4:00 AM - 5:30 AM
+                            <span class="duration">90 min</span>
+                        </div>
+                        <div class="activity-title">
+                            <span class="activity-icon">✨</span> Mahakaleshwar Bhasma Aarti ⭐⭐⭐
+                        </div>
+                        <div class="activity-details">
+                            <div class="detail-item"><strong class="highlight">MOST SACRED RITUAL!</strong> Most powerful blessing from Lord Shiva</div>
+                            <div class="detail-item"><strong>Time:</strong> 4:00-6:00 AM | Arrive 3:50 AM for front row</div>
+                            <div class="detail-item"><strong>Process:</strong> Cremated ashes applied to Shivling in rituals</div>
+                            <div class="detail-item"><strong>Experience:</strong> Conches, Bells, Sanskrit Chanting, Goosebumps!</div>
+                            <div class="detail-item">Receive blessed ash (bhasma) on forehead as prasad</div>
+                            <div class="detail-item"><strong>Expected Crowd:</strong> 100-200 people (not crowded)</div>
+                        </div>
+                        <div class="cost">💰 Free Entry | Absolutely Transformative</div>
+                    </div>
+                </div>
+
+                <!-- Activity 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">🍵</div>
+                    <div class="timeline-card">
+                        <div class="time-slot">
+                            5:30 AM - 6:30 AM
+                            <span class="duration">60 min</span>
+                        </div>
+                        <div class="activity-title">
+                            <span class="activity-icon">🍵</span> Breakfast & Transport Prep
+                        </div>
+                        <div class="activity-details">
+                            <div class="detail-item"><strong>Tower Chowk:</strong> Poha-Jalebi (₹40) - Hot & Quick</div>
+                            <div class="detail-item"><strong>Protein:</strong> Idli-Dosa (₹60)</div>
+                            <div class="detail-item"><strong>Hydration:</strong> Drink 2 glasses water minimum</div>
+                            <div class="detail-item">Confirm cab/transport for 140 km journey</div>
+                        </div>
+                        <div class="cost">💰 ₹100-150</div>
+                    </div>
+                </div>
+
+                <!-- Activity 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">🚗</div>
+                    <div class="timeline-card">
+                        <div class="time-slot">
+                            7:00 AM - 11:15 AM
+                            <span class="duration">4 hours</span>
+                        </div>
+                        <div class="activity-title">
+                            <span class="activity-icon">🚗</span> Journey to Omkareshwar
+                        </div>
+                        <div class="activity-details">
+                            <div class="detail-item"><strong>Distance:</strong> 140 km | 3.5-4 hours drive</div>
+                            <div class="detail-item"><strong>Route:</strong> Ujjain → NH52 → Indore → NH47 → Omkareshwar</div>
+                            <div class="detail-item"><strong>Cab Options:</strong> Pre-book (₹2500-3500), Shared (₹1500-2000)</div>
+                            <div class="detail-item"><strong>Pit Stops:</strong> Breakfast (30 min), Fuel (15 min)</div>
+                            <div class="detail-item">Scenic highway views, charge phone for photos</div>
+                        </div>
+                        <div class="cost">💰 ₹2500-3500 (Shared to reduce cost)</div>
+                    </div>
+                </div>
+
+                <!-- Activity 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">📍</div>
+                    <div class="timeline-card">
+                        <div class="time-slot">
+                            11:15 AM - 11:45 AM
+                            <span class="duration">30 min</span>
+                        </div>
+                        <div class="activity-title">
+                            <span class="activity-icon">📍</span> Omkareshwar Arrival & Setup
+                        </div>
+                        <div class="activity-details">
+                            <div class="detail-item">Park at Brahmapuri Parking (₹50)</div>
+                            <div class="detail-item">Arrange porter if needed (₹100)</div>
+                            <div class="detail-item"><strong>IMPORTANT:</strong> Buy water bottles (₹20 each)</div>
+                            <div class="detail-item">Access: Hanging Bridge (free, scenic) or Boat</div>
+                            <div class="detail-item">Walking distance to temple: 300-500 meters</div>
+                        </div>
+                        <div class="cost">💰 ₹50-120</div>
+                    </div>
+                </div>
+
+                <!-- Activity 6 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">🙏</div>
+                    <div class="timeline-card">
+                        <div class="time-slot">
+                            11:45 AM - 1:15 PM
+                            <span class="duration">90 min</span>
+                        </div>
+                        <div class="activity-title">
+                            <span class="activity-icon">🙏</span> Omkareshwar Temple Darshan
+                        </div>
+                        <div class="activity-details">
+                            <div class="detail-item"><strong>Sacred:</strong> 2nd Jyotirlinga on Om-shaped Island</div>
+                            <div class="detail-item"><strong>Entry Fee:</strong> Completely Free | Open 5 AM - 9:30 PM</div>
+                            <div class="detail-item"><strong>Access:</strong> Via Hanging Bridge (10 min, panoramic views)</div>
+                            <div class="detail-item"><strong>Darshan:</strong> 30-45 mins queue | View Shivling in sanctum</div>
+                            <div class="detail-item">Receive blessed ash & prasad from priests</div>
+                            <div class="detail-item"><strong>Photo Spots:</strong> Bridge midpoint, Temple dome, Island view</div>
+                        </div>
+                        <div class="cost">💰 Free Entry | Heavenly Experience</div>
+                    </div>
+                </div>
+
+                <!-- Activity 7 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">💧</div>
+                    <div class="timeline-card">
+                        <div class="time-slot">
+                            1:15 PM - 2:00 PM
+                            <span class="duration">45 min</span>
+                        </div>
+                        <div class="activity-title">
+                            <span class="activity-icon">💧</span> Holy Dip in Narmada River
+                        </div>
+                        <div class="activity-details">
+                            <div class="detail-item"><strong>Sacred:</strong> Bathing in Narmada is purifying</div>
+                            <div class="detail-item"><strong>Best Spot:</strong> Gaumukh Ghat (nearby)</div>
+                            <div class="detail-item">Water is COLD - do quick dip, not long swim</div>
+                            <div class="detail-item">Hold onto rocks - current is strong</div>
+                            <div class="detail-item">Carry towel & dry clothes (ESSENTIAL)</div>
+                        </div>
+                        <div class="cost">💰 Free | Spiritual Cleansing</div>
+                    </div>
+                </div>
+
+                <!-- Activity 8 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">⛵</div>
+                    <div class="timeline-card">
+                        <div class="time-slot">
+                            2:00 PM - 3:30 PM
+                            <span class="duration">90 min</span>
+                        </div>
+                        <div class="activity-title">
+                            <span class="activity-icon">⛵</span> Boat Ride to Mamleshwar Temple
+                        </div>
+                        <div class="activity-details">
+                            <div class="detail-item"><strong>Sacred:</strong> 2nd Jyotirlinga on opposite bank</div>
+                            <div class="detail-item"><strong>Boat Options:</strong> Group (₹50/person) or Personal (₹600-700)</div>
+                            <div class="detail-item">Navigate sacred Narmada River, see Omkar Parvat</div>
+                            <div class="detail-item">Experience Triveni Sangam (holy river confluence)</div>
+                            <div class="detail-item"><strong>Mamleshwar:</strong> Smaller, intimate, peaceful temple</div>
+                            <div class="detail-item"><strong>Photo Magic:</strong> Capture river reflections & temple</div>
+                        </div>
+                        <div class="cost">💰 ₹50-350 (Shared to reduce)</div>
+                    </div>
+                </div>
+
+                <!-- Activity 9 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">🍲</div>
+                    <div class="timeline-card">
+                        <div class="time-slot">
+                            3:30 PM - 4:30 PM
+                            <span class="duration">60 min</span>
+                        </div>
+                        <div class="activity-title">
+                            <span class="activity-icon">🍲</span> Lunch at Omkareshwar
+                        </div>
+                        <div class="activity-details">
+                            <div class="detail-item"><strong>Local Vegetarian Hotels:</strong> ₹150-250/meal</div>
+                            <div class="detail-item"><strong>Dhabas:</strong> Basic North Indian (₹100-200)</div>
+                            <div class="detail-item"><strong>Safe Items:</strong> Dal-Bhaat, Roti, Sabzi</div>
+                            <div class="detail-item"><strong>Avoid:</strong> Eating near river (water quality)</div>
+                            <div class="detail-item"><strong>Best:</strong> Restaurants in Omkareshwar town (5-min walk)</div>
+                        </div>
+                        <div class="cost">💰 ₹200-300</div>
+                    </div>
+                </div>
+
+                <!-- Activity 10 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">📸</div>
+                    <div class="timeline-card">
+                        <div class="time-slot">
+                            4:30 PM - 5:30 PM
+                            <span class="duration">60 min</span>
+                        </div>
+                        <div class="activity-title">
+                            <span class="activity-icon">📸</span> Gaumukh Ghat & Golden Hour Photography
+                        </div>
+                        <div class="activity-details">
+                            <div class="detail-item"><strong>Location:</strong> Natural ghat on Narmada banks</div>
+                            <div class="detail-item"><strong>Why:</strong> Scenic beauty, sunset views, peaceful</div>
+                            <div class="detail-item"><strong>Activities:</strong> Photography, meditation, watch sunset</div>
+                            <div class="detail-item"><strong>Golden Hour Magic:</strong> 5:30-6:00 PM perfect light</div>
+                            <div class="detail-item"><strong>Photo Ideas:</strong> River flow, sun reflection, mountain silhouettes</div>
+                        </div>
+                        <div class="cost">💰 Free | Unforgettable Memories</div>
+                    </div>
+                </div>
+
+                <!-- Activity 11 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">🌟</div>
+                    <div class="timeline-card">
+                        <div class="time-slot">
+                            5:30 PM - 6:00 PM
+                            <span class="duration">30 min</span>
+                        </div>
+                        <div class="activity-title">
+                            <span class="activity-icon">🌟</span> Final Temple Moments & Prasad
+                        </div>
+                        <div class="activity-details">
+                            <div class="detail-item">Final visit to main Omkareshwar temple if desired</div>
+                            <div class="detail-item">Collect prasad (blessed sweets)</div>
+                            <div class="detail-item">Light diyas in prayer hall</div>
+                            <div class="detail-item">Express gratitude for spiritual blessings</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity 12 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">🚗</div>
+                    <div class="timeline-card">
+                        <div class="time-slot">
+                            6:00 PM - 10:00 PM
+                            <span class="duration">4 hours</span>
+                        </div>
+                        <div class="activity-title">
+                            <span class="activity-icon">🚗</span> Return Journey to Ujjain
+                        </div>
+                        <div class="activity-details">
+                            <div class="detail-item"><strong>Route:</strong> Omkareshwar → Barwah → Indore → Ujjain</div>
+                            <div class="detail-item"><strong>Expected Arrival:</strong> 9:30-10:00 PM</div>
+                            <div class="detail-item"><strong>Dinner:</strong> On the way (Indore outskirts) or at hotel</div>
+                            <div class="detail-item">Reflect on spiritual journey during drive</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity 13 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">🏠</div>
+                    <div class="timeline-card">
+                        <div class="time-slot">
+                            10:00 PM onwards
+                            <span class="duration">Variable</span>
+                        </div>
+                        <div class="activity-title">
+                            <span class="activity-icon">🏠</span> Hotel Check-out & Return to Pune
+                        </div>
+                        <div class="activity-details">
+                            <div class="detail-item"><strong>Option 1 (If bus tonight):</strong> Check-out by 10 PM, taxi to bus stand (₹200)</div>
+                            <div class="detail-item"><strong>Option 2 (If bus tomorrow):</strong> Stay overnight, early departure</div>
+                            <div class="detail-item">Breakfast at hotel if morning bus</div>
+                            <div class="detail-item">Head to bus stand by 6:00 AM</div>
+                        </div>
+                        <div class="cost">💰 ₹100-200 (Taxi)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="summary-box">
+                <h3>📋 Day 2 Summary</h3>
+                <ul>
+                    <li>Experience the MOST SACRED ritual: Bhasma Aarti at 4 AM</li>
+                    <li>Visit 2 Jyotirlingas: Omkareshwar & Mamleshwar</li>
+                    <li>Take holy dip in sacred Narmada River</li>
+                    <li>Cross river via boat to explore island temple</li>
+                    <li>Capture golden hour photography at Gaumukh Ghat</li>
+                    <li>Complete spiritual 2-day pilgrimage journey</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- BUDGET & TIPS -->
+        <div id="budget" class="day-section">
+            <div class="section-header">
+                <h2>💰 Complete Budget Breakdown</h2>
+                <p>Per Person Cost Estimation for 2-Day Pilgrimage</p>
+            </div>
+
+            <div class="budget-items">
+                <div class="budget-category">
+                    <div class="category-title">🏨 Accommodation & Meals</div>
+                    <div class="budget-item">
+                        <span>Guest House (1 night)</span>
+                        <strong>₹800</strong>
+                    </div>
+                    <div class="budget-item">
+                        <span>Breakfast (2 days)</span>
+                        <strong>₹150</strong>
+                    </div>
+                    <div class="budget-item">
+                        <span>Lunch (2 days)</span>
+                        <strong>₹500</strong>
+                    </div>
+                    <div class="budget-item">
+                        <span>Dinner & Snacks</span>
+                        <strong>₹400</strong>
+                    </div>
+                    <div class="budget-item" style="background: rgba(212, 175, 55, 0.2); margin-top: 1rem;">
+                        <span><strong>Accommodation Subtotal</strong></span>
+                        <strong>₹1,850</strong>
+                    </div>
+                </div>
+
+                <div class="budget-category">
+                    <div class="category-title">🚗 Transportation</div>
+                    <div class="budget-item">
+                        <span>Auto/Cab within Ujjain</span>
+                        <strong>₹400</strong>
+                    </div>
+                    <div class="budget-item">
+                        <span>Cab to Omkareshwar (140 km)</span>
+                        <strong>₹2,500-3,000</strong>
+                    </div>
+                    <div class="budget-item">
+                        <span>Boat ride (Shared/Personal)</span>
+                        <strong>₹350-400</strong>
+                    </div>
+                    <div class="budget-item">
+                        <span>Return Cab Ujjain</span>
+                        <strong>₹2,500-3,000</strong>
+                    </div>
+                    <div class="budget-item">
+                        <span>Parking & Porter</span>
+                        <strong>₹150</strong>
+                    </div>
+                    <div class="budget-item" style="background: rgba(212, 175, 55, 0.2); margin-top: 1rem;">
+                        <span><strong>Transportation Subtotal</strong></span>
+                        <strong>₹5,900-6,550</strong>
+                    </div>
+                </div>
+
+                <div class="budget-category">
+                    <div class="category-title">🙏 Temple & Activities</div>
+                    <div class="budget-item">
+                        <span>All Temple Entries</span>
+                        <strong>FREE</strong>
+                    </div>
+                    <div class="budget-item">
+                        <span>Shoe Depositing (2 days)</span>
+                        <strong>₹40</strong>
+                    </div>
+                    <div class="budget-item">
+                        <span>Water Bottles</span>
+                        <strong>₹60</strong>
+                    </div>
+                    <div class="budget-item">
+                        <span>Tips & Prasad</span>
+                        <strong>₹150</strong>
+                    </div>
+                    <div class="budget-item" style="background: rgba(212, 175, 55, 0.2); margin-top: 1rem;">
+                        <span><strong>Activities Subtotal</strong></span>
+                        <strong>₹250</strong>
+                    </div>
+                </div>
+
+                <div class="budget-category">
+                    <div class="category-title">🎁 Miscellaneous</div>
+                    <div class="budget-item">
+                        <span>Snacks & Emergency</span>
+                        <strong>₹300</strong>
+                    </div>
+                    <div class="budget-item">
+                        <span>Tips & Contingency</span>
+                        <strong>₹200</strong>
+                    </div>
+                    <div class="budget-item" style="background: rgba(212, 175, 55, 0.2); margin-top: 1rem;">
+                        <span><strong>Miscellaneous Subtotal</strong></span>
+                        <strong>₹500</strong>
+                    </div>
+                </div>
+
+                <div class="budget-total">
+                    💰 TOTAL ESTIMATED COST PER PERSON: ₹9,000 - ₹10,000
+                    <br><br>
+                    <span style="font-size: 0.9em;">✓ Can reduce with shared cabs & boats<br>✓ All temple entries completely FREE</span>
+                </div>
+            </div>
+
+            <!-- Tips Section -->
+            <div style="padding: 2rem 0;">
+                <h3 style="text-align: center; color: var(--saffron); font-size: 1.8em; margin-bottom: 2rem;">🌟 Insider Tips for Maximum Experience</h3>
+
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h4>⏰ Aarti Timing Tips</h4>
+                        <p><strong>Bhasma Aarti (4:00-6:00 AM):</strong> Arrive 3:50 AM for front row<br><br><strong>Kaal Bhairav (6:00-7:00 PM):</strong> Spiritually intense, unique offerings<br><br><strong>Ram Ghat (7:00 PM):</strong> Most photogenic, bring camera</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <h4>👥 Crowd Management</h4>
+                        <p><strong>Best Time:</strong> Early morning (5-7 AM), Late evening (6-8 PM)<br><br><strong>Avoid:</strong> 8 AM-12 PM weekends (tourist rush)<br><br><strong>Weekday:</strong> Visit on weekday if possible (fewer crowds)</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <h4>📸 Photography Golden Hours</h4>
+                        <p><strong>Sunrise:</strong> 5:30-6:30 AM (warm light, few people)<br><br><strong>Golden Hour:</strong> 5:30-6:30 PM (sunset backdrop)<br><br><strong>Aarti:</strong> Use natural temple lamp light, NO flash</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <h4>💰 Money-Saving Hacks</h4>
+                        <p>✓ Book cab 1 day ahead (₹500-800 cheaper)<br>✓ Street food (₹30-50 vs ₹200+ restaurants)<br>✓ Shared boats (₹50 vs ₹700 personal)<br>✓ Dharamshala (₹500-700, food included)</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <h4>🙏 Temple Conduct</h4>
+                        <p>✓ Remove shoes before sanctum<br>✓ Walk clockwise around temples<br>✓ Modest clothes (no shorts/sleeveless)<br>✓ Maintain silence during aarties<br>✓ Don't touch sacred items</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <h4>🎒 Essential Packing</h4>
+                        <p>✓ Towel (large & small)<br>✓ Dry clothes for changing<br>✓ Water bottle (2 liters)<br>✓ Phone charger + Power bank<br>✓ Sunscreen & Insect repellent</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <h4>🏨 Accommodation Tips</h4>
+                        <p><strong>Budget Options:</strong><br>• Shubham Guest House (₹800-1000)<br>• Dream Castle Homestay (₹800)<br>• Near Mahakaleshwar Temple for easy access</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <h4>📍 Best Photo Spots</h4>
+                        <p>• Ram Ghat (7-7:30 PM) - Aarti lamps<br>• Omkareshwar Bridge (sunset) - Island view<br>• Gaumukh Ghat (5:30-6 PM) - Golden hour<br>• Mahakaleshwar entrance (5:30-6:30 AM)<br>• Mamleshwar from boat - Water perspective</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="summary-box">
+                <h3>✅ Pre-Trip Checklist</h3>
+                <ul>
+                    <li>Book hotel 2 weeks in advance (peak season)</li>
+                    <li>Pre-book cab 1 day before departure to Omkareshwar</li>
+                    <li>Download offline maps (internet can be spotty)</li>
+                    <li>Carry ₹2,000-3,000 cash (not all places accept cards)</li>
+                    <li>Set alarm for 3:15 AM on Day 2 (with backup alarm)</li>
+                    <li>Inform hotel reception about Bhasma Aarti time</li>
+                    <li>Pack towel & dry clothes in separate bag</li>
+                    <li>Charge phone fully before Day 2 morning</li>
+                    <li>Wear comfortable shoes (lots of walking)</li>
+                    <li>Keep emergency contacts saved in phone</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <h3>🙏 Blessed Pilgrimage 🙏</h3>
+        <p style="font-size: 1.1em; margin-bottom: 1.5rem;">Experience the divine energy of Ujjain & Omkareshwar</p>
+        <div class="mantra">जय महाकाल! जय ओंकारेश्वर!</div>
+        <p style="margin-top: 1.5rem;">Jai Mahakal! Jai Omkareshwar!</p>
+        <p style="font-size: 0.85em; margin-top: 1rem; opacity: 0.9;">May your spiritual journey be blessed with peace, clarity & divine grace 🕉️✨</p>
+        <p style="font-size: 0.8em; margin-top: 2rem; border-top: 1px solid var(--gold); padding-top: 1rem;">Safe travels | Blessed pilgrimage | Share your experience #UjjainDarshan #Omkareshwar #Jyotirlinga</p>
+    </div>
+
+    <script>
+        function showDay(dayId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.day-section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            // Show selected section
+            document.getElementById(dayId).classList.add('active');
+
+            // Update navigation buttons
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+
+            // Smooth scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Set Day 1 active by default
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstBtn = document.querySelector('.nav-btn');
+            if (firstBtn) {
+                firstBtn.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
